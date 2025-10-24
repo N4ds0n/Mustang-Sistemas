@@ -1,0 +1,427 @@
+/* ================= VARIÁVEIS GLOBAIS ================= */
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --blue: #0276DB;
+  --gray: #D9D9D9;
+
+  --container-max: 1200px;
+  --gap: 50px;
+}
+
+/* ================= RESET BÁSICO ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth; /* Para rolagem suave ao clicar nos links do menu */
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================= CONTAINER UNIVERSAL ================= */
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container-narrow {
+  max-width: 650px; /* Limita a largura do texto na coluna azul */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ================= HEADER ================= */
+.site-header {
+  background: transparent;
+  padding: 28px 0;
+  position: absolute; /* Posição absoluta para ficar sobre o hero */
+  width: 100%;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo img {
+  height: 60px;
+  display: block;
+}
+
+.main-nav {
+  display: flex;
+  gap: 45px;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--blue);
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  padding-top: 150px; /* Espaço para o header */
+  padding-bottom: 100px;
+  text-align: left;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 500px; /* Coluna da imagem com 500px */
+  gap: var(--gap);
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  color: var(--black);
+  margin-bottom: 20px;
+  font-weight: 900; /* Extra-negrito */
+}
+
+.highlight-blue {
+  color: var(--blue);
+}
+
+.hero-desc {
+  color: #222;
+  max-width: 540px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 500; /* Texto normal */
+}
+
+/* Botão principal (maior) */
+.btn-primary {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  padding: 20px 50px; /* Padding aumentado */
+  border-radius: 14px; /* Raio aumentado */
+  font-size: 20px; /* Fonte aumentada */
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(2, 118, 219, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: fit-content;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(2, 118, 219, 0.35);
+}
+
+/* Imagem do Hero (maior) */
+.hero-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px; /* Largura aumentada */
+  height: auto;
+  border-radius: 35px;
+  background: linear-gradient(180deg, var(--blue), #043c6b);
+  object-fit: cover; /* Para preencher o espaço */
+  display: block;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  padding: 20px; /* Padding interno */
+}
+
+/* ================= ESTILOS DE SEÇÃO GERAIS ================= */
+section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Título da Seção (h2) */
+section h2 {
+  color: var(--blue);
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* ================= SEÇÃO SOBRE NÓS ================= */
+.about {
+  padding: 0; /* Remove o padding da seção principal */
+  background-color: var(--blue); /* Fundo azul como fallback */
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+  min-height: 600px; /* Garante uma altura mínima */
+}
+
+.about-image {
+  /* Oculta a imagem em telas muito pequenas */
+  display: none;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir todo o espaço */
+  display: block;
+}
+
+.about-content-wrapper {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 80px 40px; /* Padding generoso */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Alinha o título h2 da seção à esquerda */
+.about .container-narrow h2 {
+  text-align: center;
+  color: var(--white);
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+/* Alinha o título h2 da seção ao centro */
+.about .container-narrow h2 {
+  text-align: center; /* Título centralizado */
+  color: var(--white);
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+/* Alinha o restante do conteúdo à esquerda */
+.about .container-narrow h3,
+.about .container-narrow p,
+.about .container-narrow ul {
+  text-align: left;
+}
+
+.about .container-narrow h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.about .container-narrow p,
+.about .container-narrow li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--white);
+  font-weight: 400;
+}
+
+.about .container-narrow ul {
+  list-style: none; /* Remove bullets padrão */
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Adiciona o asterisco '*' como na imagem */
+.about .container-narrow li {
+  padding-left: 22px;
+  position: relative;
+}
+
+.about .container-narrow li::before {
+  content: '*';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+
+/* Media Query para telas maiores (tablets e desktops) */
+@media (min-width: 768px) {
+  .about-image {
+    display: block; /* Mostra a imagem */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Otimiza a proporção das colunas em telas grandes */
+  .about-layout {
+    grid-template-columns: 45% 55%; /* Coluna da imagem menor, texto maior */
+  }
+}
+
+/* ================= SEÇÃO SERVIÇOS ================= */
+
+#servicos {
+  padding-top: 100px; /* Mais espaço acima do título (antes era 80px) */
+  padding-bottom: 120px; /* Mais espaço abaixo dos cards (antes era 80px) */
+}
+
+#servicos h2 {
+  margin-bottom: 70px; /* Mais espaço entre o título e os cards (antes era 50px) */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 40px 30px;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+  /* Estilo para o placeholder da imagem/ícone */
+  height: 80px;
+  width: 80px;
+  margin-bottom: 25px;
+  display: inline-block;
+  object-fit: contain; /* Para a imagem se ajustar */
+}
+
+.service-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* ================= SEÇÃO CONTATO ================= */
+.contact {
+  padding: 0; /* Remove padding da seção */
+  background-color: var(--blue); /* Fundo azul como fallback */
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr; /* Coluna única por padrão (mobile) */
+  min-height: 600px; /* AUMENTADO: de 500px para 600px para dar mais altura */
+}
+
+.contact-image {
+  display: none; /* Oculta imagem no mobile */
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Imagem cobre todo o espaço */
+  display: block;
+}
+
+.contact-content-wrapper {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* MUDADO: de 'center' para 'flex-start' (alinha no topo) */
+}
+
+/* Título principal "Contatos" */
+.contact .container-narrow h2 {
+  text-align: left; /* Alinhado à esquerda */
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Subtítulo "Entre em Contato" */
+.contact .contact-subtitle {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 50px; /* AUMENTADO: de 30px para 50px */
+}
+
+/* Bloco com os detalhes de contato */
+.contact .contact-details {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* AUMENTADO: de 15px para 25px */
+}
+
+.contact .contact-details p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+}
+
+/* Media Query para telas maiores (tablets e desktops) */
+@media (min-width: 768px) {
+  .contact-layout {
+    /* Duas colunas: 45% para texto, 55% para imagem */
+    grid-template-columns: 45% 55%; 
+  }
+
+  .contact-image {
+    display: block; /* Mostra a imagem */
+  }
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-color: var(--black);
+  text-align: center;
+  padding: 25px 0;
+  color: var(--white);
+}
+
+footer p {
+  font-size: 15px;
+  font-weight: 400;
+}
