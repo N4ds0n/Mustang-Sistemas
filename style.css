@@ -425,3 +425,133 @@ footer p {
   font-size: 15px;
   font-weight: 400;
 }
+
+/* ================= REGRAS DE RESPONSIVIDADE ================= */
+/* ----- ESTILOS PARA TABLETS (Telas até 991px) ----- */
+@media (max-width: 991px) {
+  
+  /* Container fica mais fluido */
+  .container, .container-narrow {
+    max-width: 90%;
+  }
+
+  /* Header */
+  .site-header {
+    padding: 20px 0;
+    position: absolute; /* Mantém absoluto */
+  }
+  .header-inner {
+    flex-direction: column; /* Empilha logo e nav */
+    gap: 20px;
+  }
+  .main-nav {
+    gap: 20px;
+    font-size: 18px;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebrar a linha */
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 200px; /* Mais espaço para o header empilhado */
+    padding-bottom: 60px;
+  }
+  .hero-layout {
+    grid-template-columns: 1fr; /* 1 coluna */
+    gap: 30px;
+    text-align: center; /* Centraliza o conteúdo */
+  }
+  .hero-content {
+    align-items: center; /* Centraliza o botão */
+  }
+  .hero-content h1 {
+    font-size: 42px; /* Fonte um pouco menor */
+    text-align: center; /* Centraliza H1 */
+  }
+  .hero-desc {
+    font-size: 18px;
+    text-align: center; /* Centraliza descrição */
+  }
+  .hero-image img {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .btn-primary {
+    font-size: 18px; /* Diminui um pouco o botão */
+    padding: 18px 40px;
+  }
+
+  /* Seções Gerais */
+  section {
+    padding: 60px 0;
+  }
+  section h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+  #servicos {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  #servicos h2 {
+    margin-bottom: 40px;
+  }
+  
+  /* Layout "Sobre" */
+  .about-layout {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+  .about-content-wrapper {
+    padding: 60px 20px;
+  }
+
+  /* Layout "Contato" */
+  .contact-layout {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+  .contact-content-wrapper {
+    padding: 60px 20px;
+  }
+}
+
+
+/* ----- ESTILOS PARA CELULARES (Telas até 767px) ----- */
+@media (max-width: 767px) {
+  
+  .hero-content h1 {
+    font-size: 36px; /* Fonte menor para o H1 */
+  }
+  .hero-desc {
+    font-size: 17px;
+  }
+
+  /* Seção Sobre */
+  .about-layout {
+    min-height: auto; /* Altura automática */
+  }
+  .about-image {
+    display: none; /* Esconde a imagem no mobile */
+  }
+  .about .container-narrow h3,
+  .about .container-narrow p,
+  .about .container-narrow ul {
+    text-align: left; /* Garante alinhamento à esquerda */
+  }
+
+  /* Seção Contato */
+  .contact-layout {
+    min-height: auto; /* Altura automática */
+  }
+  .contact-image {
+    display: none; /* Esconde a imagem no mobile */
+  }
+  .contact-content-wrapper {
+    /* Garante alinhamento à esquerda */
+    text-align: left;
+  }
+  .contact .container-narrow h2,
+  .contact .contact-subtitle,
+  .contact .contact-details {
+    text-align: left;
+  }
+}
